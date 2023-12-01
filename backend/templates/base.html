@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zxx">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="DJoz Template">
+    <meta name="keywords" content="DJoz, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DJoz | Template</title>
+
+    <!-- Google Font -->
+    <link href="{% static 'https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&display=swap' %}"
+             rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/barfiller.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/nowfont.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/rockville.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/slicknav.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
+</head>
+
+<body>
+<!-- Page Preloder -->
+<div id="preloder">
+    <div class="loader"></div>
+</div>
+
+<!-- Header Section Begin -->
+<header class="header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-2 col-md-2">
+                <div class="header__logo">
+                    <a href="{% url 'index' %}"><img src="{% static 'img/logo.png' %}" alt=""></a>
+                </div>
+            </div>
+            <div class="col-lg-10 col-md-10">
+                <div class="header__nav">
+                    <nav class="header__menu mobile-menu">
+                        <ul>
+                            <li><a href="{% url 'index' %}">Home</a></li>
+                            <li><a href="{% url 'singers' %}">Singers</a></li>
+                            <li><a href="{% url 'groups' %}">Groups</a></li>
+                            <li><a href="{% url 'music_list' %}">Musics</a></li>
+                            {% if not request.user.is_authenticated %}
+                                <li><a href="{% url 'register' %}">Register</a></li>
+                                <li><a href="{% url 'login' %}">Login</a></li>
+                                    {% else %}
+                                <li><a href="{% url 'logout' %}">Logout</a></li>
+                                    {% endif %}
+                        </ul>
+                    </nav>
+
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu-wrap"></div>
+    </div>
+</header>
+<!-- Header Section End -->
+{% block content %}
+
+{% endblock %}
+<!-- Footer Section Begin -->
+<footer class="footer spad set-bg" data-setbg="{% static 'img/footer-bg.png' %}">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-6">
+                <div class="footer__address">
+                    <ul>
+                        <li>
+                            <i class="fa fa-phone"></i>
+                            <p>Phone</p>
+                            <h6>+996-501-592-328</h6>
+                        </li>
+                        <li>
+                            <i class="fa fa-envelope"></i>
+                            <p>Email</p>
+                            <h6>DJ.Music@gmail.com</h6>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-4 offset-lg-1 col-md-6">
+                <div class="footer__social">
+                    <h2>DJoz</h2>
+                    <div class="footer__social__links">
+                        <a href="#"><i class="fa fa-facebook"></i></a>
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                        <a href="#"><i class="fa fa-instagram"></i></a>
+                        <a href="#"><i class="fa fa-dribbble"></i></a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+        <div class="footer__copyright__text">
+            <p>Copyright &copy;
+                <script>document.write(new Date().getFullYear());</script>
+                All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a
+                        href="https://colorlib.com" target="_blank">Colorlib</a></p>
+        </div>
+        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+    </div>
+</footer>
+<!-- Footer Section End -->
+
+<!-- Js Plugins -->
+<script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+<script src="{% static 'js/jquery.nicescroll.min.js' %}"></script>
+<script src="{% static 'js/jquery.barfiller.js' %}"></script>
+<script src="{% static 'js/jquery.countdown.min.js' %}"></script>
+<script src="{% static 'js/jquery.slicknav.js' %}"></script>
+<script src="{% static 'js/owl.carousel.min.js' %}"></script>
+<script src="{% static 'js/main.js' %}"></script>
+
+<!-- Music Plugin -->
+<script src="{% static 'js/jquery.jplayer.min.js' %}"></script>
+<script src="{% static 'js/jplayerInit.js' %}"></script>
+</body>
+
+</html>

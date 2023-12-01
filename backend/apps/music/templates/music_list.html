@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+<br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+<style>
+        /* Стилизация блока audio */
+        audio {
+            width: 100%;
+            max-width: 400px;
+            margin: 20px 0;
+            border: 2px solid #3498db;
+            border-radius: 8px;
+            background-color: #ecf0f1;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Стилизация элементов управления audio (play, pause, volume и т. д.) */
+        audio::-webkit-media-controls-panel {
+            background-color: #3498db;
+            border-radius: 8px;
+        }
+
+        /* Стилизация временной шкалы проигрывания audio */
+        audio::-webkit-media-controls-timeline {
+            background-color: #fff;
+        }
+    </style>
+
+<!-- Track Section Begin -->
+    <section class="track spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7">
+                    <div class="section-title">
+                        <h2>Latest tracks</h2>
+                        <h1>Music podcast</h1>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="track__all">
+                        <a href="#" class="primary-btn border-btn">View all tracks</a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-7 p-0">
+                    <div class="track__content nice-scroll">
+                        {% for music in musics %}
+                        <div class="single_player_container">
+                            <h4>
+                                <a href="{% url 'music_detail' music.id %}" style="color: black;">
+                                    {{music.title}}
+                                </a>
+                            </h4>
+                            <audio id="audioPlayer" controls>
+                            <source src="{{music.music.url}}" type="audio/mp3">
+                            Your browser does not support the audio element.
+                            </audio>
+                            {% for genre_name in music.genre.all %}
+                            <span>{{genre_name.name}}</span>
+                            {% endfor %}
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="col-lg-5 p-0">
+                    <div class="track__pic">
+                        <img src="{% static 'img/track-right.jpg' %}" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Track Section End -->
+<br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+     <br>
+    <br>
+    <br>
+    <br>
+
+
+
+{% endblock %}

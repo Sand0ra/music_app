@@ -1,0 +1,186 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+  <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+  <!-- Breadcrumb Begin -->
+    <div class="breadcrumb-option">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb__links">
+                        <a href="{% url 'index' %}"><i class="fa fa-home"></i> Home</a>
+                        <span>Discography</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Breadcrumb End -->
+
+    <!-- Blog Details Section Begin -->
+    <section class="blog-details spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="blog__details__content">
+                        <div class="blog__details__item">
+                            <div class="blog__details__item__pic set-bg" data-setbg="{{ news.image.url }}">
+
+                                <a href="#"><i class="fa fa-share-alt"></i></a>
+                            </div>
+                            <div class="blog__details__item__text">
+                                <h7>Дата публикации: {{news.public_date}}</h7>
+                                <h3>Сегодня в обсуждении: {{news.title}}</h3>
+                                <div class="blog__details__item__widget">
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <ul>
+                                                <li>By <span>Erna O’Conner</span></li>
+
+                                            </ul>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <ul>
+                                                <li>230 Views</li>
+                                                <li>18 Comments</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="blog__details__desc">
+                            <h4>{{news.description}}</h4>
+
+                        </div>
+
+
+                        <div class="blog__details__tags">
+                            {% for singer in group.singer.all %}
+                                <a href="#">{%if singer.first_name%}{{ singer.first_name }}
+                                {{ singer.last_name }}{% else %}{{singer.nickname}}{% endif %}</a>
+                            {% endfor %}
+                        </div>
+                        <div class="blog__details__option">
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <a href="#" class="blog__option__btn">
+                                        <h6 class="option__btn__name"><i class="fa fa-angle-left"></i> Previous posts
+                                        </h6>
+                                        <div class="blog__option__btn__item">
+                                            <div class="blog__option__btn__pic">
+                                                <img src="img/blog/details/blog-change.jpg" alt="">
+                                            </div>
+                                            <div class="blog__option__btn__text">
+                                                <h6>2020 Bendigo Blues and Roots Music Festival…</h6>
+                                                <span>Dec 17, 2019</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <a href="#" class="blog__option__btn blog__option__btn--next">
+                                        <h6 class="option__btn__name">Next posts <i class="fa fa-angle-right"></i></h6>
+                                        <div class="blog__option__btn__item">
+                                            <div class="blog__option__btn__pic">
+                                                <img src="img/blog/details/blog-change.jpg" alt="">
+                                            </div>
+                                            <div class="blog__option__btn__text">
+                                                <h6>2020 Bendigo Blues and Roots Music Festival…</h6>
+                                                <span>Dec 17, 2019</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="blog__details__services">
+                            <div class="row">
+                                <div class="col-lg-12">
+
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="blog__details__form">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="blog__sidebar">
+                        <div class="blog__sidebar__item">
+
+
+                        </div>
+                        <div class="blog__sidebar__item">
+                            <div class="blog__sidebar__title">
+                                <h4>Recent posts</h4>
+                            </div>
+                            <a href="#" class="recent__item">
+                                <div class="recent__item__pic">
+                                    <img src="img/blog/br-1.jpg" alt="">
+                                </div>
+                                <div class="recent__item__text">
+                                    <h6>2020 Bendigo Blues and Roots Music Festival…</h6>
+                                    <span>Dec 17, 2019</span>
+                                </div>
+                            </a>
+                            <a href="#" class="recent__item">
+                                <div class="recent__item__pic">
+                                    <img src="img/blog/br-2.jpg" alt="">
+                                </div>
+                                <div class="recent__item__text">
+                                    <h6>2020 Bendigo Blues and Roots Music Festival…</h6>
+                                    <span>Dec 17, 2019</span>
+                                </div>
+                            </a>
+                            <a href="#" class="recent__item">
+                                <div class="recent__item__pic">
+                                    <img src="img/blog/br-3.jpg" alt="">
+                                </div>
+                                <div class="recent__item__text">
+                                    <h6>2020 Bendigo Blues and Roots Music Festival…</h6>
+                                    <span>Dec 17, 2019</span>
+                                </div>
+                            </a>
+                            <a href="#" class="recent__item">
+                                <div class="recent__item__pic">
+                                    <img src="img/blog/br-4.jpg" alt="">
+                                </div>
+                                <div class="recent__item__text">
+                                    <h6>2020 Bendigo Blues and Roots Music Festival…</h6>
+                                    <span>Dec 17, 2019</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Blog Details Section End -->
+ <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+ <br>
+<br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+ <br>
+
+
+{% endblock %}

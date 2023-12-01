@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+    <br>
+    <br>
+    <br>
+    <br>
+<!-- Countdown Section Begin -->
+    <section class="countdown countdown--page spad set-bg" data-setbg="{% static 'img/countdown-bg.jpg' %}">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="countdown__text">
+                        <h1>News</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Countdown Section End -->
+
+<!-- Tours Section Begin -->
+    <section class="tours spad">
+    <div class="container">
+        {% for new in news %}
+            <div class="row mb-4">
+                <div class="col-lg-6">
+                    <div class="toursitempic">
+                        {% for photo in new.photos.all %}
+                            <img src="{{ photo.image.url }}" class="img-fluid" alt="">
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h2 class="card-title">{{ new.title }}</h2>
+                            <p class="card-text">{{ new.description }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</section>
+    <!-- Tours Section End -->
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+{% endblock %}
